@@ -1,5 +1,5 @@
 ### Task 1. Basic classes of objects:
-```
+```{r}
 > char <- "Hello_World"
 > class(char)
 [1] "character"
@@ -81,5 +81,23 @@ y  3.9 131.0  2.8
 z  2.0   7.0  5.1
 ```
 ### Task 4. Creating a list
+```
+> l_all_classes <- list(1L, "b", 365, FALSE, 3 + 6i)
+> l_all_classes
+[[1]]
+[1] 1
 
+[[2]]
+[1] "b"
+
+[[3]]
+[1] 365
+
+[[4]]
+[1] FALSE
+
+[[5]]
+[1] 3+6i
+```
+### Task 5. Creating a factor with three levels
 
