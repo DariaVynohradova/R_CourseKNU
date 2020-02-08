@@ -100,4 +100,12 @@ z  2.0   7.0  5.1
 [1] 3+6i
 ```
 ### Task 5. Creating a factor with three levels
+```
+> f <- factor(c("baby", "child", "child", "baby", "adult", "adult", "child"), levels = c ("baby", "child", "adult"))
+> f
+[1] baby  child child baby  adult adult child
+Levels: baby child adult
+```
+### Task 6. Vectors
+##### Defining an index of the first "NA"
 
