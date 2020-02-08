@@ -1,4 +1,4 @@
-### Task 1. Basic classes of objects:
+### Task 1. Basic classes of objects
 ```
 > char <- "Hello_World"
 > class(char)
@@ -20,7 +20,7 @@
 > l
 [1] TRUE
 ```
-### Task 2. Creating Vectors:
+### Task 2. Creating Vectors
 ```
 > v1 <- c(5:75)
 > v1
@@ -106,6 +106,43 @@ z  2.0   7.0  5.1
 [1] baby  child child baby  adult adult child
 Levels: baby child adult
 ```
-### Task 6. Vectors
+### Task 6. Subsetting
 ##### Defining an index of the first "NA"
+```
+> v_sub <- c(1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11)
+> v_sub
+ [1]  1  2  3  4 NA  6  7 NA  9 NA 11
+> min(which(is.na(v_sub)))
+[1] 5
+```
+##### Number of NAs 
+```
+> length(which(is.na(v_sub)))
+[1] 3
+```
+### Task 7. Creating a data frame
+```
+> df <- data.frame(x = 35:40, y = c("M", "M", "F", "F", "F", "M"))
+> df
+   x y
+1 35 M
+2 36 M
+3 37 F
+4 38 F
+5 39 F
+6 40 M
+```
+### Task 8. Rename columns
+```
+> names(df) <- c("age", "gender")
+> df
+  age gender
+1  35      M
+2  36      M
+3  37      F
+4  38      F
+5  39      F
+6  40      M
+```
+
 
