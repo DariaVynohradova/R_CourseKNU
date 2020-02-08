@@ -47,4 +47,15 @@
 ```
 ### Task 3. Creating Matrices
 ```
+##### Creating matrix from vector by adding a dimension attribute
+> dim(v_m) <- c(4, 3)
+> m1 <- c(0.5, 3.9, 0, 2, 1.3, 131, 2.2, 7, 3.5, 2.8, 4.6, 5.1)
+> dim(m1) <- c(4, 3)
+> m1
+     [,1]  [,2] [,3]
+[1,]  0.5   1.3  3.5
+[2,]  3.9 131.0  2.8
+[3,]  0.0   2.2  4.6
+[4,]  2.0   7.0  5.1
+##### Creating matrix using **matrix** function
 
