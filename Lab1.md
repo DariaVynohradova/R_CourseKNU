@@ -106,7 +106,7 @@ z  2.0   7.0  5.1
 [1] baby  child child baby  adult adult child
 Levels: baby child adult
 ```
-### Task 6. Subsetting
+### Task 6. Identifying NAs
 ##### Defining an index of the first "NA"
 ```
 > v_sub <- c(1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11)
