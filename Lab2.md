@@ -83,7 +83,6 @@
 ##### Extract column 'cc' using column name
 ```
 df$cc
-```
   [1] b l u f s s v b d i l j f t c h k q w x z r a s o
  [26] h j n i a c f s g q p t f t b f n q i d e i m c e
  [51] x e f z d r y f j f h a o d p a k u p p l o p p x
@@ -91,7 +90,6 @@ df$cc
 26 Levels: a b c d e f g h i j k l m n o p q r s ... z
 ```
 > data.frame(df$cc)
-```
     df.cc
 1       b
 2       l
@@ -193,3 +191,5 @@ df$cc
 98      x
 99      w
 100     o
+```
+
