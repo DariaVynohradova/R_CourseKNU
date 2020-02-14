@@ -194,4 +194,26 @@ df$cc
 99      w
 100     o
 ```
-
+### Task 3. NA Values
+```
+> z<- c(1, 2, 3, NA, 4, NA, 5, NA)
+> z
+[1]  1  2  3 NA  4 NA  5 NA
+```
+##### Return all the elements that are not NA
+```
+> nas <- is.na(z)
+> z[!nas]
+[1] 1 2 3 4 5
+```
+##### Calculate mean of the elemetns without NAs
+```
+> mean(z, na.rm=TRUE)
+[1] 3
+```
+##### Calculate mean of the elemetns with NAs
+####### na.rm = FALSE does not remove NA values present in vector before calculation proceeds. And if NA is present in the vector, mean would be NA irrespective of anything else
+```
+> mean(z, na.rm=FALSE)
+[1] NA
+```
