@@ -89,6 +89,8 @@ df$cc
  [76] u u h e k n s y x y w z h k z x a s f r e q x w o
 26 Levels: a b c d e f g h i j k l m n o p q r s ... z
 ```
+
+```
 > data.frame(df$cc)
     df.cc
 1       b
