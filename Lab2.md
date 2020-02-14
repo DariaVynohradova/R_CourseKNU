@@ -212,7 +212,7 @@ df$cc
 [1] 3
 ```
 ##### Calculate mean of the elemetns with NAs
-####### na.rm = FALSE does not remove NA values present in vector before calculation proceeds. And if NA is present in the vector, mean would be NA irrespective of anything else
+na.rm = FALSE does not remove NA values present in vector before calculation proceeds. And if NA is present in the vector, mean would be NA irrespective of anything else
 ```
 > mean(z, na.rm=FALSE)
 [1] NA
