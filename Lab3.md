@@ -27,3 +27,54 @@
 ### Task 3
 ##### User defined function with an expression
 ```
+> my_ifelse <- function(x, exp, n){
++     if (exp == "<") {
++         x[x<n]
++     } else if(exp == "<="){
++         x[x<=n]
++     } else if (exp == ">"){
++         x[x>n]
++     } else if (exp == ">="){
++         x[x>=n]
++     } else if (exp == "=="){
++         x[x==n]
++     } else {
++         x} }
+
+> v1<-c(7, 6.65, -5, 23, 0, 3.23, -0.45)
+
+> my_ifelse(v1, '<', 4)
+[1] -5.00  0.00  3.23 -0.45
+
+> my_ifelse(v1, '==', 7)
+[1] 7
+
+> my_ifelse(v1, '<=', 2)
+[1] -5.00  0.00 -0.45
+```
+### Task 4
+##### User defined function that calculates mean value of the column
+```
+> c1<-c(3, NA, 8, 5, NA)
+> c2<-1:5
+> c3<-6:10
+> c4<-11:15
+
+> m<-rbind(c1, c2, c3, c4)
+> m
+   [,1] [,2] [,3] [,4] [,5]
+c1    3   NA    8    5   NA
+c2    1    2    3    4    5
+c3    6    7    8    9   10
+c4   11   12   13   14   15
+
++ colunmmean<-function(x, removeNA=TRUE){
++ colMeans(x, na.rm = removeNA)
++ }
+
+> colunmmean(m)
+[1]  5.25  7.00  8.00  8.00 10.00
+
+> colunmmean(m, removeNA=FALSE)
+[1] 5.25   NA 8.00 8.00   NA
+```
