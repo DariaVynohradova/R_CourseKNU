@@ -53,7 +53,7 @@
 [1] -5.00  0.00 -0.45
 ```
 ### Task 4
-##### User defined function that calculates mean value of the column
+##### User defined function that calculates mean value of the column (1st variant with ColMeans)
 ```
 > c1<-c(3, NA, 8, 5, NA)
 > c2<-1:5
@@ -78,3 +78,32 @@ c4   11   12   13   14   15
 > colunmmean(m, removeNA=FALSE)
 [1] 5.25   NA 8.00 8.00   NA
 ```
+##### User defined function that calculates mean value of the column (2nd variant with for loop)
+```
+> c1<-c(3, NA, 8, 5, NA)
+> c2<-1:5
+> c3<-6:10
+> c4<-11:15
+
+> m<-rbind(c1, c2, c3, c4)
+
+> col_mean <- function (x, removeNA=TRUE) {
++   for (j in seq_len(ncol(x))) {
++     print(mean(x[,j], na.rm=removeNA))
++   }
++ }
+
+> col_mean(m)
+[1] 5.25
+[1] 7
+[1] 8
+[1] 8
+[1] 10
+
+> col_mean(m, removeNA=FALSE)
+[1] 5.25
+[1] NA
+[1] 8
+[1] 8
+[1] NA
+
