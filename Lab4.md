@@ -53,7 +53,7 @@
 ### Task 7
 ##### Create a subset, where "Ozone">31 and "Temp">90
 ```
-> subdf<- subset(df, Ozone > 31 & Temp >90, select=Ozone:Day)
+> subdf<- subset(df, Ozone > 31 & Temp >90)
 > subdf
     Ozone Solar.R Wind Temp Month Day
 69     97     267  6.3   92     7   8
@@ -84,10 +84,3 @@
 > max(df[df$Month==5,"Ozone"], na.rm=TRUE)
 [1] 115
 ```
-
-
-
-
-
-
-
