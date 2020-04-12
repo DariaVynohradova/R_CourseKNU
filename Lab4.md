@@ -47,6 +47,45 @@
 ### Task 6
 ##### Calculate mean value of "Ozone" column
 ```
+> mean(df$Ozone, na.rm=TRUE)
+[1] 42.12931
+```
+### Task 7
+##### Create a subset, where "Ozone">31 and "Temp">90
+```
+> subdf<- subset(df, Ozone > 31 & Temp >90, select=Ozone:Day)
+> subdf
+    Ozone Solar.R Wind Temp Month Day
+69     97     267  6.3   92     7   8
+70     97     272  5.7   92     7   9
+120    76     203  9.7   97     8  28
+121   118     225  2.3   94     8  29
+122    84     237  6.3   96     8  30
+123    85     188  6.3   94     8  31
+124    96     167  6.9   91     9   1
+125    78     197  5.1   92     9   2
+126    73     183  2.8   93     9   3
+127    91     189  4.6   93     9   4
+```
+##### Calculate mean value of "Solar.R" column
+```
+> mean(subdf$Solar.R)
+[1] 212.8
+```
+### Task 8
+##### Calculate mean value of "Temp" if "Month"==6
+```
+> mean(df[df$Month==6,"Temp"])
+[1] 79.1
+```
+### Task 9
+##### Calculate max value of "Ozone" if "Month"==5
+```
+> max(df[df$Month==5,"Ozone"], na.rm=TRUE)
+[1] 115
+```
+
+
 
 
 
