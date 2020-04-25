@@ -73,4 +73,37 @@
 ### Task 3
 ##### Create function corr() that returns the vector of correlation coefficients
 ```
+> corr <- function(directory, threshold=0){
++   file_list <- list.files()
++   v<-c()
++   for (i in 1:length(file_list)){
++     df <- read.csv(file_list[i])
++     df <- df[complete.cases(df),]
++     if (nrow(df)>threshold){
++       v <- c(v, cor(df$sulfate, df$nitrate))
++     }
++   }
++   return(v)
++ }
+```
+> x <- corr("specdata", 150)
+> head(x)
+[1] -0.01895754 -0.14051254 -0.04389737 -0.06815956
+[5] -0.12350667 -0.07588814
+> summary(x)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-0.21057 -0.04999  0.09463  0.12525  0.26844  0.76313 
 
+> x <- corr("specdata", 400)
+> head(x); summary(x)
+[1] -0.01895754 -0.04389737 -0.06815956 -0.07588814
+[5]  0.76312884 -0.15782860
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-0.17623 -0.03109  0.10021  0.13969  0.26849  0.76313
+
+> x <- corr("specdata", 4000)
+> head(x); summary(x)
+NULL
+Length  Class   Mode 
+     0   NULL   NULL
+```
