@@ -71,3 +71,40 @@
 ### Task 8
 #####  Create list1 <- list(observationA = c(1:5, 7:3), observationB = matrix(1:6, nrow=2))
 ```
+> list1 <- list(observationA = c(1:5, 7:3), observationB = matrix(1:6, nrow=2))
+> lapply(list1, sum)
+$observationA
+[1] 40
+
+$observationB
+[1] 21
+```
+
+### Task 9
+#####  Find max and min values for each element of the list
+###### LAPPLY
+```
+> lapply(list1, min)
+$observationA
+[1] 1
+
+$observationB
+[1] 1
+>
+> lapply(list1, max)
+$observationA
+[1] 7
+
+$observationB
+[1] 6
+```
+###### SAPPLY
+```
+> sapply(list1, min)
+observationA observationB 
+           1            1 
+> 
+> sapply(list1, max)
+observationA observationB 
+           7            6 
+```
