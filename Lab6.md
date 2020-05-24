@@ -108,3 +108,13 @@ observationA observationB
 observationA observationB 
            7            6 
 ```
+
+### Task 10
+##### For InsectSprays find mean count for each spray
+```
+> spray <- split(InsectSprays$count, InsectSprays$spray)
+> 
+> sapply(spray, mean)
+        A         B         C         D         E         F 
+14.500000 15.333333  2.083333  4.916667  3.500000 16.666667
+```
