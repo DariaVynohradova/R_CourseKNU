@@ -31,3 +31,49 @@
 5        5             12 ANZ
 ```
 
+##### Question 1
+```
+> quest1<-function() {
++   olympics[which.max(olympics$Gold), "Country"]
++ }
+> quest1()
+[1] "United States"
+```
+
+##### Question 2
+```
+> quest2<-function() {
++   olympics[which.max(olympics$Total-olympics$Total.1), "Country"]
++ }
+> quest2()
+[1] "United States"
+```
+
+##### Question 3
+```
+> quest3<-function() {
++   my_subset<-subset(olympics, Gold>=1 & Gold.1>=1)
++   my_subset[which.max((my_subset$Gold-my_subset$Gold.1)/my_subset$Gold.2), "Country"]
++ }
+> quest3()
+[1] "Bulgaria"
+```
+
+##### Question 4
+```
+> quest4<-function() {
++   olympics$Points<-(olympics$Gold.2*3 + olympics$Silver.2*2 + olympics$Bronze.2*1)
++   olympics[, c("Country", "Points")]
++ }
+> 
+> head(quest4(), 5)
+       Country Points
+1 Afghanistan       2
+2     Algeria      27
+3   Argentina     130
+4     Armenia      16
+5 Australasia      22
+```
+
+
+
