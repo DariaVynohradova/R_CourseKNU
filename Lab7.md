@@ -168,6 +168,58 @@
 
 ##### Question 5
 ```
+> quest5<-function() {
++   census_1<-split(census[ , "CTYNAME"], census[ , "STNAME"])
++   count<-sapply(census_1, length)
++   which.max(count)
++ }
+> 
+> quest5()
+Texas
+```
 
+##### Question 6
+```
+> quest6<-function() {
++   census_2<-census[order(census$STNAME, -census$CENSUS2010POP), ]
++   df_split<-split(census_2, census_2$STNAME)
++   df_split<-lapply(df_split, function (x) sum (x[2:4, "CENSUS2010POP"]))
++   df_split<-df_split[order(unlist(df_split), decreasing = TRUE, na.last = TRUE)]
++   names(df_split) [1:3]
++ }
+> quest6() 
+[1] "California" "Texas" "Illinois"
+```
 
+##### Question 7
+```
+> quest7<-function() {
++   census_<-census[-which(census$COUNTY == 0), ]
++   population<-census_[, 10:15]
++   popul_max<-apply(population, 1, max)
++   popul_min<-apply(population, 1, min)
++   popul_chg<-(popul_max-popul_min)
++   population<-cbind(CTYNAME = census_$CTYNAME, popul_chg)
++   population[which.max(popul_chg)]
++ }
+> quest7()
+[1] "Harris County"
+```
+
+##### Question 8
+```
+> quest8 <- function() {
++   subset_1<-subset(census, (REGION==1 | REGION==2))
++   subset_2<-subset_1[grep("Washington", subset_1$CTYNAME),]
++   subset_3<-subset(subset_2, POPESTIMATE2015>POPESTIMATE2014)
++   subset_3[ , c("STNAME", "CTYNAME")]
++ }
+> quest8() 
+           STNAME           CTYNAME
+897          Iowa Washington County
+1420    Minnesota Washington County
+2346 Pennsylvania Washington County
+2356 Rhode Island Washington County
+3164    Wisconsin Washington County
+```
 
