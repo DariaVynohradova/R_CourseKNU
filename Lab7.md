@@ -5,9 +5,14 @@
 +   df <- read.csv(file_name, skip = 1, 
 +                  header = TRUE, encoding='UTF-8', 
 +                  stringsAsFactors = FALSE) 
-+   names(df) <- c('Country', 'Summer', 'Gold', 'Silver', 'Bronze', 'Total', 'Winter', 
-+                  'Gold.1', 'Silver.1', 'Bronze.1', 'Total.1', 
-+                  'Games', 'Gold.2', 'Silver.2', 'Bronze.2', 'Combined.total') 
++   names(df) <- 'Country'
++   t<- length(colnames(df[1]))
++   for (i in 1:t) {
++     colnames(df)=sub("X..", "", colnames(df), fixed=TRUE)
++     colnames(df)=sub("X01..", "Gold", colnames(df))
++     colnames(df)=sub("X02..", "Silver", colnames(df))
++     colnames(df)=sub("X03..", "Bronze", colnames(df))
++   }
 +   country_names <- strsplit(df$Country, "(", fixed = TRUE)
 +   df$Country <- sapply(country_names, "[", 1)
 +   df$ID <- substr(sapply(country_names, '[', 2), 1,3)
